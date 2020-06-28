@@ -1,0 +1,27 @@
+const props = "print";
+class Animal1 {
+    constructor(type, name, age, sex) {
+        this.type = type,
+            this.name = name,
+            this.setAge(age),
+            this.sex = sex
+    }
+    setAge() {
+        return this._age + "岁";
+    }
+    getAge(age) {
+            if (age < 0) {
+                age = 0;
+            } else if (age > 1000) {
+                age = 1000;
+            }
+            this._age = age;
+        }
+        [props]() {
+            console.log("种类：", this.type);
+            console.log("姓名:", this.name);
+            console.log("年龄：", this.age);
+            console.log("性别：", this.sex);
+        }
+}
+var b = new Animal1("狗", "旺财", 5, "雄")
